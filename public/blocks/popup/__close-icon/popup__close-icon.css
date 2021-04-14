@@ -1,0 +1,18 @@
+.popup__close-icon {
+    position: absolute;
+    height: 40px;
+    color: #FFFFFF;
+    left: 50%;
+    top: 50%;
+    margin-left: 240px;
+    margin-top: -230px;
+}
+
+@media screen and (max-width: 760px) {
+    .popup__close-icon  {
+        left: 50%;
+        top: 50%;
+        margin-left: 140px;
+        margin-top: -240px;
+    }
+}

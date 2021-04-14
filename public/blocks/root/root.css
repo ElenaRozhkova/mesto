@@ -9,6 +9,8 @@
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
+  margin-left:  auto;
+  margin-right:  auto;
 }
 
 @media screen and (max-width: 500px) {
