@@ -1,10 +1,25 @@
 .popup {
     font-family: 'Inter', Arial, sans-serif;
     display: none;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin-left: -215px;
-    margin-top: -165px;
+    z-index: 1;
+    max-width: 1280px;
+   
+    
 }
+
+
+
+
+.popup::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: black;
+    opacity: 0.5;
+    z-index: -1;
+}
+
 

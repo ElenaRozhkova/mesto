@@ -1,3 +1,10 @@
 .profile__info{
-    min-width: 336px;
+
+    max-width: 336px;
+}
+
+@media screen and (max-width: 760px) {
+    .profile__info{
+        max-width: 282px;
+    }
 }

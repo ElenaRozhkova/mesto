@@ -20,12 +20,18 @@
         <div class="profile__avatar-info">
         <img class="profile__avatar" src="./public/images/image.jpg" alt="Аватар">
         <div class="profile__info">
-          <h1 class="profile__name">Жак-Ив Кусто</h4>
-              <img class="profile__icon" src="./public/images/icon.png" alt="Работа">
+          <div class="profile__info-name">
+            <h1 class="profile__name">Жак-Ив Кусто</h1>
+            <button class="profile__editbutton"> 
+              <img class="profile__icon" src="./public/images/vvv.png" alt="Редактировать">
+            </button> 
+        </div>  
           <p class="profile__job">Исследователь океана</p>
         </div>
         </div>
-        <button class="profile__addbutton">ADD</button>  
+        <button class="profile__addbutton"> 
+          <img class="profile__addbutton-icon" src="./public/images/plus.png" alt="Добавить">
+        </button>  
       </section>
 
       <section class="elements root__section">
@@ -94,7 +100,9 @@
   <div class="editform">
 
   <div class ="popup">
-    <img class="popup__close-icon" src="./public/images/CloseIcon.png" alt="Закрыть">
+
+      <img class="popup__close-icon" src="./public/images/CloseIcon.png" alt="Закрыть">
+
     <fieldset class ="popup__container">
      <!--<h2 class="popup__edit">Редактировать профиль</h2>
       <input type="text" class="popup__name" id="name" name="nameInput" placeholder="Жак-Ив Кусто" required>

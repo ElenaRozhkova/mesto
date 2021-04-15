@@ -10,13 +10,15 @@ let profileName= document.querySelector('.profile__name');
 let profileJob= document.querySelector('.profile__job');
 let popupContainer= document.querySelector('.popup__container');
 
+
+
 console.log(profileName.textContent);
 
 popupContainer.insertAdjacentHTML('beforeend',
  `<h2 class="popup__edit">Редактировать профиль</h2>
  <input type="text" class="popup__name" id="name" name="nameInput" placeholder="${profileName.textContent}" required>
  <input type="text" class="popup__job" id="job" name="jobInput" placeholder="${profileJob.textContent}" required>
- <input type="submit" class="popup__button">
+ <input type="submit" value="Сохранить" class="popup__button">
   `);
 
 
@@ -30,5 +32,36 @@ function closefunc(){
     popup.classList.remove('popup_opened');
 }
 
+
+
+// Находим форму в DOM
+let formElement = document.querySelector('.popup__button');// Воспользуйтесь методом querySelector()
+// Находим поля формы в DOM
+let nameInput = document.querySelector('.popup__name'); // Воспользуйтесь инструментом .querySelector()
+let jobInput = document.querySelector('.popup__job');// Воспользуйтесь инструментом .querySelector()
+
+nameInput.addEventListener('click', clearValueName); 
+jobInput.addEventListener('click', clearValueJob); 
+
+function clearValueName () {
+    nameInput.placeholder=''; 
+}
+function clearValueJob () {
+    jobInput.placeholder=''; 
+}
+// Обработчик «отправки» формы, хотя пока
+// она никуда отправляться не будет
+function formSubmitHandler (evt) {
+    evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
+                                                // Так мы можем определить свою логику отправки.
+
+    profileName.textContent=nameInput.value;
+    profileJob.textContent=jobInput.value;
+    closefunc();
+}
+
+// Прикрепляем обработчик к форме:
+// он будет следить за событием “submit” - «отправка»
+formElement.addEventListener('click', formSubmitHandler); 
 
 

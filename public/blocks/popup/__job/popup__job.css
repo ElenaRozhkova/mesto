@@ -6,6 +6,9 @@
     border-bottom: 1px solid #bcbcc4;
     margin-bottom: 48px;
     outline:none;
+    text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .popup__job::placeholder {

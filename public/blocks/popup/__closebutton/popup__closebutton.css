@@ -1,23 +1,21 @@
-.popup__close-icon {
+/*.popup__closebutton {
     position: absolute;
     height: 40px;
+    width: 40px;
     color: #FFFFFF;
     left: 50%;
     top: 50%;
     margin-left: 210px;
     margin-top: -200px;
-    cursor: pointer;
 }
 
-.popup__close-icon:hover {
-    opacity: 0.6;
-}
 
 @media screen and (max-width: 760px) {
-    .popup__close-icon  {
+    .popup__closebutton {
         left: 50%;
         top: 50%;
-        margin-left: 110px;
-        margin-top: -200px;
-    }
+        margin-left: 105px;
+        margin-top: -205px;
+    }  
 }
+*/

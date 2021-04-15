@@ -6,6 +6,9 @@
   border-bottom: 1px solid #bcbcc4;
   margin-bottom: 30px;
   outline:none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .popup__name:hover {
@@ -14,7 +17,6 @@
 }
 
 .popup__name::placeholder {
-  
     color: #000000;
     font-weight: normal;
     font-size: 14px;
