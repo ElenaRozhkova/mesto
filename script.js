@@ -1,38 +1,16 @@
 
-let profileEdit= document.querySelector('.profile__icon');
-profileEdit.addEventListener('click',openfunc);
-
+let profileEdit= document.querySelector('.profile__editbutton');
 let profileClose= document.querySelector('.popup__close-icon');
-profileClose.addEventListener('click',closefunc);
-
 let profileName= document.querySelector('.profile__name');
-
 let profileJob= document.querySelector('.profile__job');
 let popupContainer= document.querySelector('.popup__container');
 
-
-
-console.log(profileName.textContent);
-
-popupContainer.insertAdjacentHTML('beforeend',
- `<h2 class="popup__edit">Редактировать профиль</h2>
- <input type="text" class="popup__name" id="name" name="nameInput" placeholder="${profileName.textContent}" required>
- <input type="text" class="popup__job" id="job" name="jobInput" placeholder="${profileJob.textContent}" required>
- <input type="submit" value="Сохранить" class="popup__button">
-  `);
-
-
-function openfunc(){
-    let popup= document.querySelector('.popup');
-    popup.classList.add('popup_opened');
-}
-
-function closefunc(){
-    let popup= document.querySelector('.popup');
-    popup.classList.remove('popup_opened');
-}
-
-
+/*popupContainer.insertAdjacentHTML('beforeend',
+`<h2 class="popup__edit">Редактировать профиль</h2>
+<input type="text" class="popup__name" id="name" name="nameInput" placeholder="${profileName.textContent}" required>
+<input type="text" class="popup__job" id="job" name="jobInput" placeholder="${profileJob.textContent}" required>
+<input type="submit" value="Сохранить" class="popup__button">
+ `);*/
 
 // Находим форму в DOM
 let formElement = document.querySelector('.popup__button');// Воспользуйтесь методом querySelector()
@@ -40,23 +18,38 @@ let formElement = document.querySelector('.popup__button');// Воспользу
 let nameInput = document.querySelector('.popup__name'); // Воспользуйтесь инструментом .querySelector()
 let jobInput = document.querySelector('.popup__job');// Воспользуйтесь инструментом .querySelector()
 
+profileEdit.addEventListener('click',openfunc);
+profileClose.addEventListener('click',closefunc);
 nameInput.addEventListener('click', clearValueName); 
 jobInput.addEventListener('click', clearValueJob); 
 
 function clearValueName () {
-    nameInput.placeholder=''; 
+    nameInput.placeholder='';
+    
 }
 function clearValueJob () {
     jobInput.placeholder=''; 
+}
+
+function openfunc(){
+    let popup= document.querySelector('.popup');
+    popup.classList.add('popup_opened');
+    nameInput.textContent=profileName.value;
+    jobInput.textContent=profileJob.value;
+}
+
+function closefunc(){
+    let popup= document.querySelector('.popup');
+    popup.classList.remove('popup_opened');
 }
 // Обработчик «отправки» формы, хотя пока
 // она никуда отправляться не будет
 function formSubmitHandler (evt) {
     evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
                                                 // Так мы можем определить свою логику отправки.
-
+if ((nameInput.value!=='')||(jobInput.value!=='')){
     profileName.textContent=nameInput.value;
-    profileJob.textContent=jobInput.value;
+    profileJob.textContent=jobInput.value;}
     closefunc();
 }
 
