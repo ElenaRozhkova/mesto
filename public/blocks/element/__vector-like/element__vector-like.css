@@ -1,0 +1,8 @@
+.element__vector-like {
+    border: none;
+    background-color: #FFF;
+}
+
+.element__vector-like:focus {
+    outline: none;
+}

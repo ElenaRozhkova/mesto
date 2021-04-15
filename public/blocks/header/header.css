@@ -6,9 +6,7 @@
     display: flex;
     align-items: flex-end;
     margin-bottom: 40px;
- 
 }
-
 
 @media screen and (max-width: 940px) {
     .header {
@@ -18,8 +16,7 @@
 }
 
 @media screen and (max-width: 760px) {
-    .header{
+    .header {
         margin-bottom: 38px;
     }
 }
-

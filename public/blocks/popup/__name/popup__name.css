@@ -1,19 +1,19 @@
 .popup__name {
-  font-family: 'Inter', Arial, sans-serif;
-  border: 0;
-  width: 100%;
-  box-sizing: border-box;
-  border-bottom: 1px solid #bcbcc4;
-  margin-bottom: 30px;
-  outline:none;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
+    font-family: 'Inter', Arial, sans-serif;
+    border: 0;
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 1px solid #bcbcc4;
+    margin-bottom: 30px;
+    outline: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .popup__name:hover {
     border: 0;
-    border-bottom: 1px solid #bcbcc4; 
+    border-bottom: 1px solid #bcbcc4;
 }
 
 .popup__name::placeholder {
@@ -21,4 +21,4 @@
     font-weight: normal;
     font-size: 14px;
     line-height: 17px;
-} 
+}

@@ -4,6 +4,21 @@ let profileClose= document.querySelector('.popup__close-icon');
 let profileName= document.querySelector('.profile__name');
 let profileJob= document.querySelector('.profile__job');
 let popupContainer= document.querySelector('.popup__container');
+let like = document.querySelectorAll('.element__vector');
+console.log(like);
+
+for (let button of document.querySelectorAll(".element__vector")) {
+
+    button.addEventListener("click", function () {
+        this.classList.toggle('element__vector_active');}
+        );}
+
+        /*like.addEventListener('click', changeLike); 
+function changeLike () {
+    console.log("hallo");
+    like.classList.toggle('element__vector_active');
+}*/
+
 
 /*popupContainer.insertAdjacentHTML('beforeend',
 `<h2 class="popup__edit">Редактировать профиль</h2>

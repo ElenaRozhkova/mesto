@@ -13,7 +13,6 @@
     background: #000000;
     border-radius: 2px;
     padding: 0;
-
 }
 
 .popup__button:hover {
@@ -21,7 +20,7 @@
 }
 
 @media screen and (max-width: 760px) {
-    .popup__button   {
+    .popup__button {
         height: 46px;
     }
 }

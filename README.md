@@ -12,4 +12,4 @@
 2. CSS
 3. JavaScript
 
-* Ссылка на макет в Проект https://elenarozhkova.github.io/russian-travel/index.html
+* Ссылка на макет в Проект https://elenarozhkova.github.io/mesto/index.html

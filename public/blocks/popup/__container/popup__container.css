@@ -1,4 +1,4 @@
-.popup__container{
+.popup__container {
     font-family: 'Inter', Arial, sans-serif;
     max-width: 358px;
     max-height: 330px;
@@ -9,7 +9,7 @@
     padding-block-start: 0;
     padding-inline-start: 0;
     padding-inline-end: 0;
-    padding-block-end:0;
+    padding-block-end: 0;
     border-width: 0;
     margin: auto auto;
     border-radius: 10px;
@@ -30,4 +30,3 @@
         margin-top: -161px;
     }
 }
-

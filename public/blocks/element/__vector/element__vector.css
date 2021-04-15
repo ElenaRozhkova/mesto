@@ -1,12 +1,16 @@
-.element__vector{
+.element__vector {
     border: none;
-    background: url(https://code.s3.yandex.net/web-code/dom/heart.svg) center no-repeat;
-    background-size: 100%;
     cursor: pointer;
     height: 19px;
     width: 22px;
     right: 10px;
+    background-color: #FFF;
+}
+
+.element__vector:hover {
     opacity: 0.5;
-    transition: 0.3s;
-    color: #000000;
+}
+
+.element__vector:focus {
+    outline: none;
 }

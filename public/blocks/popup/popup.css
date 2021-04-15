@@ -2,11 +2,8 @@
     font-family: 'Inter', Arial, sans-serif;
     display: none;
     z-index: 1;
-    max-width: 1280px;   
+    max-width: 1280px;
 }
-
-
-
 
 .popup::after {
     content: "";
@@ -17,7 +14,4 @@
     bottom: 0;
     background: black;
     opacity: 0.5;
-   
 }
-
-
