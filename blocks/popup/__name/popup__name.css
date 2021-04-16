@@ -1,25 +1,26 @@
-.popup__job {
+.popup__name {
     font-family: 'Inter', Arial, sans-serif;
+    min-height: 27px;
     border: 0;
+    padding: 0;
     width: 100%;
     box-sizing: border-box;
     border-bottom: 1px solid #bcbcc4;
-    margin-bottom: 48px;
+    margin-bottom: 30px;
     outline: none;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
 }
 
-.popup__job::placeholder {
+.popup__name:hover {
+    border: 0;
+    border-bottom: 1px solid #bcbcc4;
+}
+
+.popup__name::placeholder {
     color: #000000;
     font-weight: normal;
     font-size: 14px;
     line-height: 17px;
-}
-
-@media screen and (max-width: 760px) {
-    .popup__job {
-        margin-bottom: 45px;
-    }
 }

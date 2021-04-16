@@ -1,11 +1,12 @@
 .popup__close-icon {
     position: absolute;
-    height: 40px;
+    min-width: 50px;
+    padding: 0;
     color: #FFFFFF;
     left: 50%;
     top: 50%;
-    margin-left: 210px;
-    margin-top: -200px;
+    margin-left: 205px;
+    margin-top: -215px;
     cursor: pointer;
     z-index: 2;
 }
@@ -16,9 +17,10 @@
 
 @media screen and (max-width: 760px) {
     .popup__close-icon {
+        max-width: 30px;
         left: 50%;
         top: 50%;
-        margin-left: 110px;
-        margin-top: -200px;
+        margin-left: 100px;
+        margin-top: -210px;
     }
 }
