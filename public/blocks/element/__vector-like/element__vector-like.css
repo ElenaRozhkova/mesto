@@ -1,6 +1,7 @@
 .element__vector-like {
     border: none;
     background-color: #FFF;
+    padding: 0;
 }
 
 .element__vector-like:focus {
