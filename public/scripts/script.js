@@ -33,8 +33,9 @@ function clearValueJob() {
 function tooglePopup() {
     popup.classList.toggle('popup_opened');
     profileName = document.querySelector('.profile__name');
-    nameInput.textContent = profileName.value;
-    jobInput.textContent = profileJob.value;
+    profileJob = document.querySelector('.profile__job');
+    nameInput.textContent = profileName.textContent;
+    jobInput.textContent = profileJob.textContent;
 }
 
 function formSubmitHandler(evt) {
