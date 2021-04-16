@@ -1,3 +1,4 @@
 .element__vector_active {
-    filter: invert(1);
+    fill: #000;
+    opacity: 1;
 }

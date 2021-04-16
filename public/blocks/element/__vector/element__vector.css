@@ -10,7 +10,3 @@
 .element__vector:hover {
     opacity: 0.5;
 }
-
-.element__vector:focus {
-    outline: none;
-}
