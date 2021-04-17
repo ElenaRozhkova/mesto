@@ -4,10 +4,17 @@
     background-color: #000000;
     border: 2px solid #FFFFFF;
     box-sizing: border-box;
+    border-radius: 2px;
     padding: 0;
     cursor: pointer;
 }
 
 .profile__addbutton:hover {
     opacity: 0.6;
+}
+
+@media screen and (max-width: 760px) {
+    .profile__addbutton {
+        width: 282px;
+    }
 }

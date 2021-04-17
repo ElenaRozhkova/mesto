@@ -1,0 +1,10 @@
+.popup_type_job {
+    margin-bottom: 48px;
+}
+
+
+@media screen and (max-width: 760px) {
+    .popup_type_job {
+        margin-bottom: 45px;
+    }
+}

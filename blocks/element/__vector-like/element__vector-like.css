@@ -7,3 +7,7 @@
 .element__vector-like:focus {
     outline: none;
 }
+
+.element__vector-like:hover {
+    opacity: 0.5;
+}
