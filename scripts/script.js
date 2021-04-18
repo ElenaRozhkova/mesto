@@ -20,10 +20,8 @@ function closefunc() {
 
 function formSubmitHandler(evt) {
     evt.preventDefault();
-    if ((nameInput.value !== '') || (jobInput.value !== '')) {
-        profileName.textContent = nameInput.value;
-        profileJob.textContent = jobInput.value;
-    }
+    profileName.textContent = nameInput.value;
+    profileJob.textContent = jobInput.value;
     closefunc();
 }
 

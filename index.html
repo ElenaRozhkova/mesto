@@ -115,15 +115,17 @@
 
 
     <div class="popup">
-        <form name="popupForm" class="popup__container">
-            <button type="button" class="popup__close"> 
-              <img class="popup__close-icon" src="./images/plus.png" alt="Закрыть">
-            </button>
-            <h2 class="popup__edit">Редактировать профиль</h2>
-            <input type="text" class="popup__input popup__input_type_name" id="name" name="nameInput" placeholder="Жак-Ив Кусто" required>
-            <input type="text" class="popup__input popup__input_type_job" id="job" name="jobInput" placeholder="Исследователь океана" required>
-            <button type="submit" class="popup__button">Сохранить</button>
-        </form>
+        <div class="popup__container">
+            <form name="popupForm" class="popup__form">
+                <button type="button" class="popup__close"> 
+                  <img class="popup__close-icon" src="./images/plus.png" alt="Закрыть">
+                </button>
+                <h2 class="popup__edit">Редактировать профиль</h2>
+                <input type="text" class="popup__input popup__input_type_name" id="name" name="nameInput" placeholder="Жак-Ив Кусто" required>
+                <input type="text" class="popup__input popup__input_type_job" id="job" name="jobInput" placeholder="Исследователь океана" required>
+                <button type="submit" class="popup__button">Сохранить</button>
+            </form>
+        </div>
     </div>
     <script src="./scripts/script.js"></script>
 </body>
