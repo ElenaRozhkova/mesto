@@ -46,8 +46,6 @@ const initialCards = [{
 
 
 function openCards(cardName, cardLink) {
-    console.log(cardName);
-    console.log(cardLink);
     const elementTemplate = document.querySelector('#element-template').content;
     const cardElement = elementTemplate.querySelector('.element').cloneNode(true);
     cardElement.querySelector('.element__image').src = cardLink;
@@ -123,7 +121,4 @@ imgClose.addEventListener('click', function() {
 
 initialCards.forEach((item) => {
     openCards(item.name, item.link);
-    console.log(item.name);
-    console.log(item.link);
-
 });
