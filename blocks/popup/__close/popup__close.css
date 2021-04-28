@@ -2,10 +2,8 @@
     position: absolute;
     border: none;
     padding: 0;
-    left: 50%;
-    top: 50%;
-    margin-left: 215px;
-    margin-top: -205px;
+    top:-40px;
+    right:-40px;
     cursor: pointer;
     background-color: #000;
     transform: rotate(-45deg);
@@ -18,9 +16,7 @@
 
 @media screen and (max-width: 760px) {
     .popup__close {
-        left: 50%;
-        top: 50%;
-        margin-left: 115px;
-        margin-top: -200px;
+        right: 0;
+        top: -40px;
     }
 }

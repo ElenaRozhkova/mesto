@@ -55,10 +55,10 @@
 
 
     <div class="popup">
-        <div class="popup__container">
-            <form id="editPopup" class="popup__editPopup">
-                <button type="button" class="popup__close"> 
-                  <img class="popup__close-icon" src="./images/plus.png" alt="Закрыть">
+        <div class="popup__container popup__editPopup">
+            <form id="editPopup" class="popup__editform">
+                <button type="button" class="popup__close" id="edit"> 
+                  <div class="popup__close-icon"></div>
                 </button>
                 <h2 class="popup__edit">Редактировать профиль</h2>
                 <input type="text" class="popup__input popup__input_type_name" id="name" name="nameInput" placeholder="Жак-Ив Кусто" required>
@@ -67,31 +67,28 @@
             </form>
         </div>
     </div>
-
-    <div class="popupadd">
-        <div class="popupadd__container">
-            <form id="newItemPopup" class="popupadd__form">
-                <button type="button" class="popupadd__close"> 
-                  <img class="popupadd__close-icon" src="./images/plus.png" alt="Закрыть">
+    <div class="popup">
+        <div class="popup__container popup__addPopup">
+            <form id="newItemPopup" class="popup__addform">
+                <button type="button" class="popup__close" id="add"> 
+                    <div class="popup__close-icon"></div>
                 </button>
-                <h2 class="popupadd__edit">Новое место</h2>
-                <input type="text" class="popupadd__input popupadd__input_type_name" name="nameInputAdd" placeholder="Название" required>
-                <input type="text" class="popupadd__input popupadd__input_type_job" name="jobInputAdd" placeholder="Ссылка на картинку" required>
-                <button type="submit" class="popupadd__button popupadd__button_type_add">Создать</button>
+                <h2 class="popup__edit">Новое место</h2>
+                <input type="text" class="popup__input popup__input_type_text" name="nameInputAdd" placeholder="Название" required>
+                <input type="url" class="popup__input popup__input_type_link" name="jobInputAdd" placeholder="Ссылка на картинку" required>
+                <button type="submit" class="popup__button popup__button_type_add">Создать</button>
             </form>
         </div>
     </div>
 
-    <div class="popupimg">
-        <div class="popupimg__container">
-            <form id="imagePopup" class="popupimg__form">
-                <button type="button" class="popupimg__close"> 
-                    <img class="popupimg__close-icon" src="./images/plus.png" alt="Закрыть">
+    <div class="popup">
+            <form id="imagePopup" class="popup__imgPopup">
+                <button type="button" class="popup__close" id="img"> 
+                    <div class="popup__close-icon"></div>
                 </button>
-                <img class="popupimg__image">
-                <label type="text" class="popupimg__name" name="nameInputImage" placeholder="Название" required></label>
+                <img class="popup__image">
+                <label type="text" class="popup__name" name="nameInputImage" placeholder="Название" required></label>
             </form>
-        </div>
     </div>
 
     <script src="./scripts/script.js"></script>
