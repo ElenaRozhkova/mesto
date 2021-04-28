@@ -1,11 +1,17 @@
 .element__vector-like {
     border: none;
-    background-color: #FFF;
-    padding: 0;
+    background: url(https://code.s3.yandex.net/web-code/dom/heart.svg) center no-repeat;
+    background-size: 100%;
+    cursor: pointer;
+    height: 19px;
+    width: 22px;
+    position: absolute;
+    right: 10px;
+    transition: 0.3s;
 }
 
 .element__vector-like:focus {
-    outline: none;
+    outline: blue;
 }
 
 .element__vector-like:hover {

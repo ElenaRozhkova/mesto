@@ -1,5 +1,6 @@
-.popup_opened {
+.popupimg_opened {
     display: flex;
+    flex-direction: column;
     visibility: visible;
     opacity: 1;
 }

@@ -1,0 +1,9 @@
+.popupadd__close-icon {
+    width: 35px;
+}
+
+@media screen and (max-width: 760px) {
+    .popupadd__close-icon {
+        width: 26px;
+    }
+}

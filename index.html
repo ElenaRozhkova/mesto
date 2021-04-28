@@ -32,79 +32,19 @@
                </button>
             </section>
 
-            <section class="elements root__section">
-                <article class="element">
-                    <img class="element__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt="Карачаевск">
+            <section class="elements root__section" id="elements">
+                <template id="element-template">
+                <article class="element" id="element">
+                    <img class="element__image">
                     <div class="element__text">
-                        <h2 class="element__title">Карачаевск</h2>
+                       <h2 class="element__title"></h2>
                         <button type="button" class="element__vector-like">
-                            <!-- <svg class="element__vector" xmlns="http://www.w3.org/2000/svg"  fill="none" stroke="#000000"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-                            
-                            <img class="element__vector" src="./public/images/like.svg" alt="Редактировать">-->
-                            <img class="element__vector" src="./images/like.svg" alt="Редактировать">
-                        </button>
+                        </button> 
                     </div>
+                    <button type="button" class="element__vector-delete">
+                    </button>
                 </article>
-
-                <article class="element">
-                    <img class="element__image" src="./images/kirill-pershin-1404681-unsplash.jpg" alt="Гора Эльбрус">
-                    <div class="element__text">
-                        <h2 class="element__title">Гора Эльбрус</h2>
-                        <button type="button" class="element__vector-like">
-                           <!-- <svg class="element__vector" xmlns="http://www.w3.org/2000/svg"  fill="none" stroke="#000000"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-                           -->
-                           <img class="element__vector" src="./images/like.svg" alt="Редактировать">
-                       </button>
-                    </div>
-                </article>
-
-                <article class="element">
-                    <img class="element__image" src="./images/kirill-pershin-1556355-unsplash.jpg" alt="Домбай">
-                    <div class="element__text">
-                        <h2 class="element__title">Домбай</h2>
-                        <button type="button" class="element__vector-like">
-                            <!-- <svg class="element__vector" xmlns="http://www.w3.org/2000/svg"  fill="none" stroke="#000000"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-                            -->
-                            <img class="element__vector" src="./images/like.svg" alt="Редактировать">
-                        </button>
-                    </div>
-                </article>
-
-                <article class="element">
-                    <img class="element__image" src="./images/kirill-pershin-1404681-unsplash.jpg" alt="Гора Эльбрус">
-                    <div class="element__text">
-                        <h2 class="element__title">Гора Эльбрус</h2>
-                        <button type="button" class="element__vector-like">
-                            <!-- <svg class="element__vector" xmlns="http://www.w3.org/2000/svg"  fill="none" stroke="#000000"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-                            -->
-                            <img class="element__vector" src="./images/like.svg" alt="Редактировать">
-                        </button>
-                    </div>
-                </article>
-
-                <article class="element">
-                    <img class="element__image" src="./images/kirill-pershin-1556355-unsplash.jpg" alt="Домбай">
-                    <div class="element__text">
-                        <h2 class="element__title">Домбай</h2>
-                        <button type="button" class="element__vector-like">
-                            <!-- <svg class="element__vector" xmlns="http://www.w3.org/2000/svg"  fill="none" stroke="#000000"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-                            -->
-                            <img class="element__vector" src="./images/like.svg" alt="Редактировать">
-                        </button>
-                    </div>
-                </article>
-
-                <article class="element">
-                    <img class="element__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt="Карачаево-Ч...">
-                    <div class="element__text">
-                        <h2 class="element__title">Карачаево-Ч...</h2>
-                        <button type="button" class="element__vector-like">
-                            <!-- <svg class="element__vector" xmlns="http://www.w3.org/2000/svg"  fill="none" stroke="#000000"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-                            -->
-                            <img class="element__vector" src="./images/like.svg" alt="Редактировать">
-                        </button>
-                    </div>
-                </article>
+            </template>
             </section>
         </main>
 
@@ -116,17 +56,44 @@
 
     <div class="popup">
         <div class="popup__container">
-            <form name="popupForm" class="popup__form">
+            <form id="editPopup" class="popup__editPopup">
                 <button type="button" class="popup__close"> 
                   <img class="popup__close-icon" src="./images/plus.png" alt="Закрыть">
                 </button>
                 <h2 class="popup__edit">Редактировать профиль</h2>
                 <input type="text" class="popup__input popup__input_type_name" id="name" name="nameInput" placeholder="Жак-Ив Кусто" required>
                 <input type="text" class="popup__input popup__input_type_job" id="job" name="jobInput" placeholder="Исследователь океана" required>
-                <button type="submit" class="popup__button">Сохранить</button>
+                <button type="submit" class="popup__button popup__button_type_add">Сохранить</button>
             </form>
         </div>
     </div>
+
+    <div class="popupadd">
+        <div class="popupadd__container">
+            <form id="newItemPopup" class="popup__newItemPopup">
+                <button type="button" class="popupadd__close"> 
+                  <img class="popupadd__close-icon" src="./images/plus.png" alt="Закрыть">
+                </button>
+                <h2 class="popupadd__edit">Новое место</h2>
+                <input type="text" class="popupadd__input popupadd__input_type_name" name="nameInputAdd" placeholder="Название" required>
+                <input type="text" class="popupadd__input popupadd__input_type_job" name="jobInputAdd" placeholder="Ссылка на картинку" required>
+                <button type="submit" class="popupadd__button popupadd__button_type_add">Создать</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="popupimg">
+        <div class="popupimg__container">
+            <form id="imagePopup" class="popupimg__form">
+                <button type="button" class="popupimg__close"> 
+                    <img class="popupimg__close-icon" src="./images/plus.png" alt="Закрыть">
+                </button>
+                <img class="popupimg__image">
+                <label type="text" class="popupimg__name" name="nameInputImage" placeholder="Название" required>
+            </form>
+        </div>
+    </div>
+
     <script src="./scripts/script.js"></script>
 </body>
 

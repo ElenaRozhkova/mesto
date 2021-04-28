@@ -1,0 +1,13 @@
+.popupimg__image {
+    max-width: 75vw;
+    max-height: 75vh;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+    .popupimg__image {
+        max-width: 240px;
+        width: 100%;
+        object-fit: cover;
+    }
+}
