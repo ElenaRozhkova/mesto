@@ -112,8 +112,8 @@ popupAdd.addEventListener('submit', formSubmitHandlerAdd);
 
 profileEdit.addEventListener('click', function() {
     openPopup(popupEdit); // открываем попап редактирования
-    profileName.value = nameInput.textContent;
-    profileJob.value = jobInput.textContent;
+    nameInput.value = profileName.textContent;
+    jobInput.value = profileJob.textContent;
 });
 
 
