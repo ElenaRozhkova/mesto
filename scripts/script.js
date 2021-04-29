@@ -44,7 +44,7 @@ const initialCards = [{
     }
 ];
 
-function createCard(cardName, cardLink) { 
+function createCard(cardName, cardLink) {
     const elementTemplate = document.querySelector('#element-template').content;
     const element = elementTemplate.querySelector('.element').cloneNode(true);
     let cardElementAlt = element.querySelector('.element__image').alt;
@@ -54,7 +54,7 @@ function createCard(cardName, cardLink) {
 
     element.querySelector('.element__image').src = cardLink;
     cardElementAlt = "Картинка";
-    element.querySelector('.element__title').innerHTML = cardName;
+    element.querySelector('.element__title').textContent = cardName;
 
     cardElementLink.addEventListener('click', function() {
         openPopup(popupImg);
@@ -71,17 +71,17 @@ function createCard(cardName, cardLink) {
     cardElementDelete.addEventListener('click', function() {
         element.remove();
     });
-   
-return element; //возвращается созданная карточка 
+
+    return element; //возвращается созданная карточка 
 }
 
-    function addCard(container, cardElement) { 
-        container.prepend(cardElement);
-    }   
+function addCard(container, cardElement) {
+    container.prepend(cardElement);
+}
 
-    initialCards.forEach((item) => {
-        addCard(elements, createCard(item.name, item.link) );
-    });
+initialCards.forEach((item) => {
+    addCard(elements, createCard(item.name, item.link));
+});
 
 function openPopup(popupElement) {
     popupElement.parentElement.classList.add('popup_opened');
@@ -102,9 +102,9 @@ function formSubmitHandler(evt) {
 
 function formSubmitHandlerAdd(evt) {
     evt.preventDefault();
-    addCard(elements, createCard(textInput.value, linkInput.value) );
+    addCard(elements, createCard(textInput.value, linkInput.value));
     closePopup(popupAdd.parentElement);
-    document.getElementById('newItemPopup').reset();    
+    document.getElementById('newItemPopup').reset();
 }
 
 popup.addEventListener('submit', formSubmitHandler);
@@ -112,8 +112,8 @@ popupAdd.addEventListener('submit', formSubmitHandlerAdd);
 
 profileEdit.addEventListener('click', function() {
     openPopup(popupEdit); // открываем попап редактирования
-    nameInput.textContent = profileName.value;
-    jobInput.textContent = profileJob.value;
+    profileName.value = nameInput.textContent;
+    profileJob.value = jobInput.textContent;
 });
 
 
