@@ -93,6 +93,7 @@ function handleOverlayClick (evt) {
         };
 }
 
+
 function handleOverlayEsc (evt) {   
     const popupOpen = document.querySelector('.popup_opened');
          if (evt.key === 'Escape') {
