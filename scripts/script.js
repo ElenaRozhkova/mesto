@@ -60,20 +60,21 @@ function createCard(cardName, cardLink) {
         openPopup(popupImg);
         popupImg.querySelector('.popup__image').src = cardLink;
         popupImg.querySelector('.popup__name').textContent = cardName;
-        console.log(popupImg.querySelector('.popup__name'));
-
     });
-
-    cardElementLike.addEventListener('click', function(evt) {
-        evt.target.classList.toggle('element__vector_active');
-    });
-
-    cardElementDelete.addEventListener('click', function() {
-        element.remove();
-    });
-
     return element; //возвращается созданная карточка 
 }
+elements.addEventListener('click', function(evt) {
+    if (evt.target.classList.contains('element__vector-like')) {
+        evt.target.classList.toggle('element__vector_active');
+    }    
+});
+
+elements.addEventListener('click', function(evt) {
+    if (evt.target.classList.contains('element__vector-delete')) {
+        evt.target.closest('.element').remove();
+    }     
+});
+
 
 function addCard(container, cardElement) {
     container.prepend(cardElement);
@@ -83,8 +84,25 @@ initialCards.forEach((item) => {
     addCard(elements, createCard(item.name, item.link));
 });
 
+
+const closePopupEsc = (evt) => {   
+    const popurOpen = document.querySelector('.popup_opened');
+    if (evt.key === 'Escape' && popurOpen != null) {
+        closePopup(popurOpen);
+      };
+}
+
+const closeOverlay = (evt) => {
+    const popurOpen = document.querySelector('.popup_opened');
+        if(evt.target === popurOpen){
+            closePopup(popurOpen);
+        };
+}
+
 function openPopup(popupElement) {
     popupElement.parentElement.classList.add('popup_opened');
+    document.addEventListener('keydown', closePopupEsc);
+    document.addEventListener('mousedown', closeOverlay);
 }
 
 
