@@ -63,6 +63,7 @@ function createCard(cardName, cardLink) {
     });
     return element; //возвращается созданная карточка 
 }
+
 elements.addEventListener('click', function(evt) {
     if (evt.target.classList.contains('element__vector-like')) {
         evt.target.classList.toggle('element__vector_active');
@@ -85,26 +86,25 @@ initialCards.forEach((item) => {
 });
 
 
-const closePopupEsc = (evt) => {   
-    const popurOpen = document.querySelector('.popup_opened');
-    if (evt.key === 'Escape' && popurOpen != null) {
-        closePopup(popurOpen);
-      };
+function handleOverlayClick (evt) {
+    const popupOpen = document.querySelector('.popup_opened');
+        if(evt.target === popupOpen){
+            closePopup(popupOpen);
+        };
 }
 
-const closeOverlay = (evt) => {
-    const popurOpen = document.querySelector('.popup_opened');
-        if(evt.target === popurOpen){
-            closePopup(popurOpen);
-        };
+function handleOverlayEsc (evt) {   
+    const popupOpen = document.querySelector('.popup_opened');
+         if (evt.key === 'Escape') {
+            closePopup(popupOpen);
+          };
 }
 
 function openPopup(popupElement) {
     popupElement.parentElement.classList.add('popup_opened');
-    document.addEventListener('keydown', closePopupEsc);
-    document.addEventListener('mousedown', closeOverlay);
+    document.addEventListener('mousedown', handleOverlayClick);
+    document.addEventListener('keydown', handleOverlayEsc);
 }
-
 
 function closePopup(elem) {
     elem.classList.remove('popup_opened');
@@ -118,6 +118,7 @@ function formSubmitHandler(evt) {
     document.getElementById('editPopup').reset();
 }
 
+
 function formSubmitHandlerAdd(evt) {
     evt.preventDefault();
     addCard(elements, createCard(textInput.value, linkInput.value));
@@ -125,8 +126,6 @@ function formSubmitHandlerAdd(evt) {
     document.getElementById('newItemPopup').reset();
 }
 
-popup.addEventListener('submit', formSubmitHandler);
-popupAdd.addEventListener('submit', formSubmitHandlerAdd);
 
 profileEdit.addEventListener('click', function() {
     openPopup(popupEdit); // открываем попап редактирования
@@ -150,3 +149,7 @@ addPopupClose.addEventListener('click', function() {
 imgPopupClose.addEventListener('click', function() {
     closePopup(popupImg.parentElement); // открываем попап редактирования
 });
+
+popup.addEventListener('submit', formSubmitHandler);
+popupAdd.addEventListener('submit', formSubmitHandlerAdd);
+

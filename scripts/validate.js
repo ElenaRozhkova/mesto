@@ -40,7 +40,6 @@ const showInputError = (formElement, inputElement, errorMessage, validation) => 
     const formList = Array.from(document.querySelectorAll(validation.formSelector));
     formList.forEach((formElement) => {
       formElement.addEventListener('submit', function (evt) {
-        console.log(formElement);
         evt.preventDefault();
       });
      // setEventListeners(formElement, validation);
@@ -60,7 +59,6 @@ const showInputError = (formElement, inputElement, errorMessage, validation) => 
   
   const toggleButtonState = (inputList,buttonElement, validation) => {
    if (hasInvalidInput(inputList)) {
-     console.log(buttonElement);
     buttonElement.classList.add(validation.inactiveButtonClass);
     buttonElement.setAttribute('disabled', true);
   } else {
