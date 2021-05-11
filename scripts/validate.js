@@ -67,10 +67,6 @@ const showInputError = (formElement, inputElement, errorMessage, validation) => 
   }  
     };
   
-
-// включение валидации вызовом enableValidation
-// все настройки передаются при вызове
-
 enableValidation({
     formSelector: '.popup__form',
     inputSelector: '.popup__input',
