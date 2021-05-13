@@ -86,17 +86,6 @@ function handleOverlayEsc(evt) {
 }
 
 function openPopup(popupElement) {
-    const nameForm = popupElement.querySelector('.popup__form');
-    const inputList = Array.from(popupElement.querySelectorAll(elemObject.inputSelector));
-
-    if (nameForm !== null) {
-        nameForm.reset();
-        inputList.forEach((inputElement) => {
-            if (document.querySelector('.popup__error_visible')) {
-                hideInputError(nameForm, inputElement, elemObject);
-            }
-        });
-    }
     popupElement.classList.add('popup_opened');
     document.addEventListener('mousedown', handleOverlayClick);
     document.addEventListener('keydown', handleOverlayEsc);
@@ -137,6 +126,9 @@ function handleCardFormSubmit(evt) {
 
 
 profileEdit.addEventListener('click', function() {
+    const inputList = Array.from(editPopup.querySelectorAll(elemObject.inputSelector));
+    document.getElementById('editPopup').reset();
+    removeInputError(editPopup, inputList, elemObject);
     openPopup(popupEdit); // открываем попап редактирования
     nameInput.value = profileName.textContent;
     jobInput.value = profileJob.textContent;
@@ -144,6 +136,9 @@ profileEdit.addEventListener('click', function() {
 
 
 addButton.addEventListener('click', function() {
+    const inputList = Array.from(newItemPopup.querySelectorAll(elemObject.inputSelector));
+    document.getElementById('newItemPopup').reset();
+    removeInputError(newItemPopup, inputList, elemObject);
     openPopup(popupAdd); // открываем попап добавления
 });
 
@@ -158,7 +153,7 @@ addPopupClose.addEventListener('click', function() {
 imgPopupClose.addEventListener('click', function() {
     closePopup(popupImg); // открываем попап редактирования
 });
-
+console.log("xxxx");
 editForm.addEventListener('submit', handleProfileFormSubmit);
 addForm.addEventListener('submit', handleCardFormSubmit);
 nameInput.addEventListener('click', clearInput);
