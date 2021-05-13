@@ -128,7 +128,6 @@ function handleCardFormSubmit(evt) {
     evt.preventDefault();
     const popupButton = document.querySelector('.popup__button_type_add');
     const inputList = Array.from(document.querySelectorAll('.popup__input'));
-    const buttonDesibled = document.querySelector('.popup__button_disabled');
     toggleButtonState(inputList, popupButton, elemObject);
     addCard(elements, createCard(textInput.value, linkInput.value));
     closePopup(popupAdd);
