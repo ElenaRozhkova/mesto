@@ -21,7 +21,7 @@
                     <div class="profile__info">
                         <div class="profile__info-name">
                             <h1 class="profile__name">Жак-Ив Кусто</h1>
-                            <button type="button" class="profile__editbutton" aria-label="Edit">     
+                            <button type="button" class="profile__editbutton" aria-label="Редактировать">     
                             </button>
                         </div>
                         <p class="profile__job">Исследователь океана</p>
@@ -54,9 +54,9 @@
     </div>
 
 
-    <div class="popup">
-        <div class="popup__container popup__editPopup">
-            <form id="editPopup" class="popup__form" novalidate>
+    <div class="popup popup_type_edit">
+        <div class="popup__container">
+            <form id="editPopup" name="editPopup" class="popup__form" novalidate>
                 <fieldset class="popup__form-set">
                     <button type="button" class="popup__close" id="edit"> 
                   <div class="popup__close-icon"></div>
@@ -66,14 +66,14 @@
                     <span class="popup__input-error name-error"></span>
                     <input type="text" class="popup__input popup__input_type_job" id="job" name="jobInput" placeholder="О себе" required minlength="2" maxlength="200">
                     <span class="popup__input-error job-error"></span>
-                    <button type="submit" class="popup__button popup__button_type_add" disabled>Сохранить</button>
+                    <button type="submit" class="popup__button">Сохранить</button>
                 </fieldset>
             </form>
         </div>
     </div>
-    <div class="popup">
-        <div class="popup__container popup__addPopup">
-            <form id="newItemPopup" class="popup__form" novalidate>
+    <div class="popup popup_type_add">
+        <div class="popup__container">
+            <form id="newItemPopup" name="addPopup" class="popup__form" novalidate>
                 <fieldset class="popup__form-set">
                     <button type="button" class="popup__close" id="add"> 
                     <div class="popup__close-icon"></div>
@@ -83,13 +83,13 @@
                     <span class="popup__input-error nameInputAdd-error"></span>
                     <input type="url" class="popup__input popup__input_type_link" id="urlInput" name="jobInputAdd" placeholder="Ссылка на картинку" required>
                     <span class="popup__input-error urlInput-error"></span>
-                    <button type="submit" class="popup__button popup__button_type_add" disabled>Создать</button>
+                    <button type="submit" class="popup__button popup__button_type_add">Создать</button>
                 </fieldset>
             </form>
         </div>
     </div>
 
-    <div class="popup">
+    <div class="popup popup_type_img">
         <form id="imagePopup" class="popup__imgPopup" novalidate>
             <button type="button" class="popup__close" id="img"> 
                     <div class="popup__close-icon"></div>
@@ -99,8 +99,10 @@
         </form>
     </div>
 
+    <script src="scripts/initial-сards.js"></script>
     <script src="./scripts/script.js"></script>
-    <script src="./scripts/validate.js"></script>-->
+    <script src="./scripts/validate.js"></script>
+
 </body>
 
 </html>

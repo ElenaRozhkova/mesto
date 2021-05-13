@@ -24,12 +24,3 @@
 .popup__input::placeholder {
     color: #000000;
 }
-
-.form__input:valid {
-    border-bottom: 1px solid #000000;
-    opacity: 0.2;
-  }
-  
-  .form__input:invalid {
-    border-bottom: 1px solid #FF0000;
-  }

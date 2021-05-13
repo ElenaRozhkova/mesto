@@ -42,7 +42,7 @@ const enableValidation = (validation) => {
         formElement.addEventListener('submit', function(evt) {
             evt.preventDefault();
         });
-        const fieldsetList = Array.from(formElement.querySelectorAll('.popup__form-set'));
+        const fieldsetList = Array.from(formElement.querySelectorAll(validation.formSet));
         fieldsetList.forEach((fieldSet) => {
             setEventListeners(fieldSet, validation);
         });
@@ -59,10 +59,8 @@ const hasInvalidInput = (inputList, validation) => {
 const toggleButtonState = (inputList, buttonElement, validation) => {
     if (hasInvalidInput(inputList)) {
         buttonElement.classList.add(validation.inactiveButtonClass);
-        buttonElement.setAttribute('disabled', true);
     } else {
         buttonElement.classList.remove(validation.inactiveButtonClass);
-        buttonElement.removeAttribute('disabled');
     }
 };
 
@@ -72,5 +70,6 @@ enableValidation({
     submitButtonSelector: '.popup__button',
     inactiveButtonClass: 'popup__button_disabled',
     inputErrorClass: 'popup__input_type_error',
-    errorClass: 'popup__error_visible'
+    errorClass: 'popup__error_visible',
+    formSet: '.popup__form-set'
 });
