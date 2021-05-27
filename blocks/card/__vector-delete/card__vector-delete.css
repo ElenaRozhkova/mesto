@@ -1,4 +1,4 @@
-.element__vector-delete {
+.card__vector-delete {
     border: none;
     background: url(../../../images/delete.svg);
     background-color: transparent;
@@ -11,4 +11,8 @@
     right: 15px;
     opacity: 1;
     transition: 0.3s;
+}
+
+.card__vector-delete:hover {
+    opacity: 0.6;
 }

@@ -24,7 +24,7 @@ export const initialCards = [{
     }
 ];
 
-export const formObject = {
+export const configValidation = {
     formSelector: '.popup__form',
     inputSelector: '.popup__input',
     submitButtonSelector: '.popup__button',
