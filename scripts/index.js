@@ -21,6 +21,7 @@ const editForm = document.querySelector('[name="editPopup"]');
 
 const cardList = document.querySelector('.cards');
 const popupImg = document.querySelector('.popup_type_img');
+const popupCollection = document.querySelectorAll('.popup');
 
 const addformValidation = new FormValidator(config, addForm);
 addformValidation.enableValidation();
@@ -106,6 +107,9 @@ profileEdit.addEventListener('click', function() {
     openPopup(popupEdit); // открываем попап редактирования
 });
 
+popupCollection.forEach((popup) => {
+    popup.addEventListener('click', handleOverlayClick);
+});
 
 addButton.addEventListener('click', function() {
     addForm.reset();
@@ -113,10 +117,6 @@ addButton.addEventListener('click', function() {
     addformValidation.removeInputsError();
     openPopup(popupAdd); // открываем попап добавления
 });
-
-popupAdd.addEventListener('click', handleOverlayClick);
-popupEdit.addEventListener('click', handleOverlayClick);
-popupImg.addEventListener('click', handleOverlayClick);
 
 profileClose.addEventListener('click', function() {
     closePopup();

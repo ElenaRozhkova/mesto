@@ -6,7 +6,6 @@ export default class FormValidator {
         this._inputErrorClass = config.inputErrorClass;
         this._errorClass = config.errorClass;
         this._inputList = Array.from(formName.querySelectorAll(config.inputSelector));
-        this.disableSubmitButton();
     }
 
     enableValidation() {
