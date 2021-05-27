@@ -2,10 +2,10 @@
     position: absolute;
     border: none;
     padding: 0;
-    top:-40px;
-    right:-40px;
+    top: -40px;
+    right: -40px;
     cursor: pointer;
-    background-color: #000;
+    background-color: transparent;
     transform: rotate(-45deg);
     outline: none;
 }

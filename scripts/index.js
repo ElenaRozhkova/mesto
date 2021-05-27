@@ -37,10 +37,10 @@ function createCard(item) {
 
     cardElementLink.addEventListener('click', function() {
         const popupImage = popupImg.querySelector('.popup__image');
-        openPopup(popupImg);
         popupImage.src = item.link;
         popupImage.alt = item.name;
         popupImg.querySelector('.popup__name').textContent = item.name;
+        openPopup(popupImg);
     });
     return cardElement; //возвращается созданная карточка 
 }
@@ -66,7 +66,6 @@ function handleOverlayEsc(evt) {
 
 function openPopup(popupElement) {
     popupElement.classList.add('popup_opened');
-    popupElement.addEventListener('click', handleOverlayClick);
     document.addEventListener('keydown', handleOverlayEsc);
 
 }
@@ -74,7 +73,6 @@ function openPopup(popupElement) {
 function closePopup() {
     const popupOpen = document.querySelector('.popup_opened');
     popupOpen.classList.remove('popup_opened');
-    document.removeEventListener('mousedown', handleOverlayClick);
     document.removeEventListener('keydown', handleOverlayEsc);
 }
 
@@ -84,7 +82,7 @@ function handleProfileFormSubmit(evt) {
     evt.preventDefault();
     profileName.textContent = nameInput.value;
     profileJob.textContent = jobInput.value;
-    closePopup(popupEdit);
+    closePopup();
 }
 
 
@@ -96,7 +94,7 @@ function handleCardFormSubmit(evt) {
         link: linkInput.value
     };
     addCard(cardList, createCard(newCard));
-    closePopup(popupAdd);
+    closePopup();
 }
 
 
@@ -116,16 +114,20 @@ addButton.addEventListener('click', function() {
     openPopup(popupAdd); // открываем попап добавления
 });
 
+popupAdd.addEventListener('click', handleOverlayClick);
+popupEdit.addEventListener('click', handleOverlayClick);
+popupImg.addEventListener('click', handleOverlayClick);
+
 profileClose.addEventListener('click', function() {
-    closePopup(popupEdit);
+    closePopup();
 });
 
 addPopupClose.addEventListener('click', function() {
-    closePopup(popupAdd);
+    closePopup();
 });
 
 imgPopupClose.addEventListener('click', function() {
-    closePopup(popupImg);
+    closePopup();
 });
 
 editForm.addEventListener('submit', handleProfileFormSubmit);
