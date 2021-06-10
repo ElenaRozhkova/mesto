@@ -7,13 +7,15 @@ export default class Card {
     }
 
     _getTemplate() {
-        const cardElement = document
+        this._element = document
             .querySelector(this._cardSelector)
             .content
             .querySelector('.card')
             .cloneNode(true);
-
-        return cardElement;
+            
+        this._likeButton = this._element.querySelector('.card__vector-like');
+        this._deleteButton = this._element.querySelector('.card__vector-delete');
+        this._cardImage = this._element.querySelector('.card__image');   
     }
 
     _handleLikeCard() {
@@ -26,22 +28,22 @@ export default class Card {
     }
 
     _setEventListeners() {
-        this._element.querySelector('.card__vector-like').addEventListener('click', () => {
+        this._likeButton.addEventListener('click', () => {
             this._handleLikeCard()
         });
 
-        this._element.querySelector('.card__vector-delete').addEventListener('click', () => {
+        this._deleteButton.addEventListener('click', () => {
             this._handleDeleteCard()
         });
 
-        this._element.querySelector('.card__image').addEventListener('click', () => { 
+        this._cardImage.addEventListener('click', () => { 
             this._handleCardClick()
         });
     }
 
 
     generateCard() {
-        this._element = this._getTemplate();       
+        this._getTemplate();       
         this._setEventListeners();
         const cardImage = this._element.querySelector('.card__image');
         this._element.querySelector('.card__title').textContent = this._name;

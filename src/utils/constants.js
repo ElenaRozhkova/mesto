@@ -24,6 +24,8 @@ export const items = [{
     }
 ];
 
+export const templateCard = '.card-template';
+
 
 export const configValidation = {
     formSelector: '.popup__form',
@@ -43,8 +45,6 @@ export const author={
 };
 
 export const popupImg = document.querySelector('.popup_type_img');
-export const imageElement = popupImg.querySelector('.popup__image');
-export const imageCaption = popupImg.querySelector('.popup__name');
 
 export const profileName = document.querySelector('.profile__name');
 export const profileJob = document.querySelector('.profile__job');
