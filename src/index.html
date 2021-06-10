@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./pages/index.css">
+  
     <title>Mesto</title>
 </head>
 
 <body class="root-page">
     <div class="root">
         <header class="header root__section">
-            <img class="header__logo" src="./images/Vector.svg" alt="Лого">
+            <img class="header__logo" src="<%=require('./images/Vector.svg')%>" alt="Логотип"> 
+            
         </header>
 
         <main class="content">
             <section class="profile root__section">
                 <div class="profile__avatar-info">
-                    <img class="profile__avatar" src="./images/image.jpg" alt="Аватар">
+                    <img class="profile__avatar" src="<%=require('./images/image.jpg')%>" alt="Аватар">
                     <div class="profile__info">
                         <div class="profile__info-name">
                             <h1 class="profile__name">Жак-Ив Кусто</h1>
@@ -27,7 +28,7 @@
                     </div>
                 </div>
                 <button type="button" class="profile__add-button"> 
-                  <img class="profile__add-icon" src="./images/plus.png" alt="Добавить">
+                  <img class="profile__add-icon" src="<%=require('./images/plus.png')%>" alt="Добавить">
                </button>
             </section>
 
@@ -98,7 +99,7 @@
         </form>
     </div>
 
-    <script type="module" src="./pages/index.js"></script>
+
 
 </body>
 

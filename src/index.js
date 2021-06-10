@@ -1,3 +1,5 @@
+import './pages/index.css';
+
 import { items, 
     author, 
     configValidation as config,
@@ -9,13 +11,13 @@ import { items,
     addForm,
     editForm,
     cardListSelector,
- } from '../utils/constants.js';
-import Section from '../scripts/components/Section.js';
-import PopupWithImage from '../scripts/components/PopupWithImage.js';
-import PopupWithForm from '../scripts/components/PopupWithForm.js';
-import Card from '../scripts/components/Card.js';
-import FormValidator from '../scripts/components/FormValidator.js';
-import UserInfo from '../scripts/components/UserInfo.js';
+ } from './utils/constants.js';
+import Section from './scripts/components/Section.js';
+import PopupWithImage from './scripts/components/PopupWithImage.js';
+import PopupWithForm from './scripts/components/PopupWithForm.js';
+import Card from './scripts/components/Card.js';
+import FormValidator from './scripts/components/FormValidator.js';
+import UserInfo from './scripts/components/UserInfo.js';
 
 const cardPopup = new PopupWithImage(popupImg);
 const user= new UserInfo (author);
@@ -51,7 +53,7 @@ const addPopup = new PopupWithForm(popupAdd,(item)=> {
 
 
 /*edit Card Popup*/
-const editPopup = new PopupWithForm(popupEdit,()=>{user.setUserInfo(author);});
+const editPopup = new PopupWithForm(popupEdit,()=>{ user.setUserInfo(author);});
 
 editButton.addEventListener('click', function() {
     editformValidation.disableSubmitButton();

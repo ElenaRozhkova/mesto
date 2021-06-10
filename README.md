@@ -7,9 +7,6 @@
 
 Интерактивная страница, где можно редактировать свой профиль. Также можно добавлять фотографии, удалять их и ставить лайки.
 
-## Языки программирования:
-1. HTML
-2. CSS
-3. JavaScript
+Технологии, использованные при создании проекта: HTML, CSS, JavaScript, БЭМ, GIT, ОПП, Webpack.
 
-* Ссылка на макет в Проект https://elenarozhkova.github.io/mesto/index.html
+* Ссылка на Проект https://elenarozhkova.github.io/mesto/index.html
