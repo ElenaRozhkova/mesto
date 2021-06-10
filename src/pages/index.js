@@ -30,6 +30,8 @@ addformValidation.enableValidation();
 const editformValidation = new FormValidator(config, editForm);
 editformValidation.enableValidation();
 
+/*create Card*/
+
 function createCard (item) {
     const card = new Card(item, templateCard, () => {
         popupImage.open(item);
@@ -57,7 +59,7 @@ const popupEditProfile = new PopupWithForm(popupEdit,()=>{ user.setUserInfo(auth
 editButton.addEventListener('click', function() {
     editformValidation.disableSubmitButton();
     editformValidation.removeInputsError();
-    const userInfo = user.getUserInfo();    
+    const userInfo = user.getUserInfo();  
     author.nameInput.value=userInfo.name;
     author.infoInput.value=userInfo.job;
     popupEditProfile.open();
