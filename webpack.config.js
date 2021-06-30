@@ -19,6 +19,7 @@ module.exports = {
     compress: true,
     port: 8080
   },
+  devtool: 'source-map',
   module: {
     rules: [{
         test: /\.js$/,
@@ -42,12 +43,14 @@ module.exports = {
       },
     ]
   },
+ 
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/pages/index.html'
     }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin(),
+
 
   ]
 } 
