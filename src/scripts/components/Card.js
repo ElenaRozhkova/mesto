@@ -1,19 +1,17 @@
 export default class Card {
-    constructor(data, cardSelector, handleCardClick, callbackDelete, callbackLike, myuserID) {
+    constructor(data, cardSelector, handleCardClick, callbackDelete, myuserID, callbackDeleteLike, callbackAddLike) {
         this._cardSelector = cardSelector;
         this._name = data.name;
         this._link = data.link;
         this._userID = data.owner._id;
         this._likes = data.likes;
+        this._cardID = data._id;
         this._couldUserLikes = data.likes.length;
         this._myuserID = myuserID;
         this._handleCardClick = handleCardClick;
         this._callbackDelete = callbackDelete;
-        this._callbackLike = callbackLike;
-
-        this._clickLike = () => {
-            this._callbackLike(this._element.querySelector('.card__vector-like').classList.contains('card__vector_active'));
-        }
+        this._callbackDeleteLike = callbackDeleteLike;
+        this._callbackAddLike = callbackAddLike;
     }
 
     _getTemplate() {
@@ -22,19 +20,15 @@ export default class Card {
             .content
             .querySelector('.card')
             .cloneNode(true);
-
         this._likeButton = this._element.querySelector('.card__vector-like');
-        this._deleteButton = this._element.querySelector('.card__vector-delete');
         this._cardImage = this._element.querySelector('.card__image');
         this._couldLike = this._element.querySelector('.card__amount-like');
-        this._couldLike.textContent = this._couldUserLikes;
     }
 
-    handleLike(amount) {
+    newCouldLike(could) {
         this._element.querySelector('.card__vector-like').classList.toggle('card__vector_active');
-        this._couldLike.textContent = amount;
+        this._couldLike.textContent = could;
     }
-
 
     handleDeleteCard() {
         this._element.closest('.card').remove();
@@ -45,10 +39,14 @@ export default class Card {
             this._clickLike()
         });
 
-        this._deleteButton.addEventListener('click', () => {
-            this._callbackDelete();
 
-        });
+        if (this._userID === this._myuserID) {
+            this._deleteButton = this._element.querySelector('.card__vector-delete');
+            this._deleteButton.classList.add('card__vector-delete_type_activ');;
+            this._deleteButton.addEventListener('click', () => {
+                this._callbackDelete();
+            });
+        }
 
         this._cardImage.addEventListener('click', () => {
             this._handleCardClick()
@@ -56,17 +54,18 @@ export default class Card {
 
     }
 
+    _clickLike() {
+        if (this._element.querySelector('.card__vector-like').classList.contains('card__vector_active')) {
+            this._callbackDeleteLike();
+        } else this._callbackAddLike();
+    }
 
     generateCard() {
         this._getTemplate();
         this._setEventListeners();
-
+        this._couldLike.textContent = this._couldUserLikes;
         if (this._likes.some((user) => (user._id === this._myuserID))) {
             this._element.querySelector('.card__vector-like').classList.add('card__vector_active');
-        }
-
-        if (this._userID !== this._myuserID) {
-            this._element.querySelector('.card__vector-delete').remove();
         }
         const cardImage = this._element.querySelector('.card__image');
         this._element.querySelector('.card__title').textContent = this._name;

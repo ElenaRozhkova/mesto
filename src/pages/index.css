@@ -26,6 +26,7 @@
 @import url("../blocks/card/__vector-like/card__vector-like.css");
 @import url("../blocks/card/__vector/_active/card__vector_active.css");
 @import url("../blocks/card/__vector-delete/card__vector-delete.css");
+@import url("../blocks/card/__vector-delete/_type/card__vector-delete_type_activ.css");
 @import url("../blocks/card/__image/_active/card__image_active.css");
 @import url("../blocks/card/__like-group/card__like-group.css");
 @import url("../blocks/card/__amount-like/card__amount-like.css");
