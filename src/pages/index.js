@@ -30,7 +30,7 @@ import UserInfo from './../scripts/components/UserInfo.js';
 import Api from './../scripts/components/Api.js';
 
 const popupImage = new PopupWithImage(popupImg);
-const user = new UserInfo(author);
+const user = new UserInfo(author, avatar);
 
 
 const api = new Api({
@@ -48,7 +48,7 @@ const section = new Section({
 const pageLoad = function() {
     Promise.all([api.getProfileInfo(), api.getInitialCards()])
         .then(([userInfo, cards]) => {
-            avatar.src = userInfo.avatar;
+            user.editAvatar(userInfo);
             user.setUserInfo(userInfo);
             section.renderItems(cards, userInfo._id);
         })
@@ -75,13 +75,13 @@ const popupEditProfile = new PopupWithForm(popupEdit, (userdaten) => {
     api.setProfileEdit(userdaten.nameInput, userdaten.jobInput)
         .then((result) => {
             user.setUserInfo(result);
+            popupEditProfile.close();
         })
 
     .catch((err) => {
             console.log(err);
         })
         .finally(() => {
-            popupEditProfile.close();
             renderLoading(false, btnSave);
         });
 
@@ -98,7 +98,7 @@ editButton.addEventListener('click', function() {
 
 const popupQuestionDelete = new PopupWithForm(popupQuestion, () => {
     cardDelete(popupQuestionDelete.card);
-    popupQuestionDelete.close();
+
 });
 
 /*create Card*/
@@ -122,6 +122,7 @@ const cardDelete = function(card) {
     api.deleteCard(card._cardID)
         .then(() => {
             card.handleDeleteCard();
+            popupQuestionDelete.close();
         })
         .catch((err) => {
             console.log(err);
@@ -135,12 +136,12 @@ const popupAddCard = new PopupWithForm(popupAdd, (item) => {
     api.addCard(item.name, item.link)
         .then((result) => {
             section.addItem(createCard(result, result.owner._id));
+            popupAddCard.close();
         })
         .catch((err) => {
             console.log(err);
         })
         .finally(() => {
-            popupAddCard.close();
             renderLoading(false, btnNew);
         });
 });
@@ -157,13 +158,13 @@ const popupChange = new PopupWithForm(popupAvatar, (item) => {
     renderLoading(true, btnSave);
     api.changeAvatar(item.avatar)
         .then((result) => {
-            avatar.src = result.avatar;
+            user.editAvatar(result);
+            popupChange.close();
         })
         .catch((err) => {
             console.log(err);
         })
         .finally(() => {
-            popupChange.close();
             renderLoading(false, btnSave);
         });
 
